@@ -1,7 +1,6 @@
 package com.example.mylistshw
 
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -19,9 +18,10 @@ class RecyclerViewAdapter(private val items:List<Hero>):RecyclerView.Adapter<Rec
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: RecycleViewHolder, position: Int) {
-        holder.name.text = items[position].name
+        holder.name.text = "Name: ${items[position].name}"
+        holder.work.text = "Occupation: ${items[position].work.occupation}"
         Glide.with(holder.itemView)
-            .load(items[position].images)
+            .load(items[position].images.md)
             .into(holder.image)
     }
 }
@@ -29,4 +29,5 @@ class RecyclerViewAdapter(private val items:List<Hero>):RecyclerView.Adapter<Rec
 class RecycleViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
     val name:TextView = itemView.findViewById(R.id.name)
     val image: ImageView = itemView.findViewById(R.id.image)
+    val work:TextView = itemView.findViewById(R.id.work)
 }

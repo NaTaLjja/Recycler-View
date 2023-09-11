@@ -6,5 +6,5 @@ import retrofit2.http.GET
 interface ApiInterface {
 
     @GET("/superhero-api/api/all.json")
-    fun getHeroes(): Single<HeroesResponse>
+    fun getHeroes(): Single<List<Hero>>
 }
