@@ -1,16 +1,9 @@
 package com.example.mylistshw
 
-import android.app.Activity
 import android.os.Bundle
 import android.os.Parcelable
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.parcelize.Parcelize
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
 class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +14,7 @@ class MainActivity: AppCompatActivity() {
 
         listFragment.setItemClickListener {
             val detailsFragment = supportFragmentManager.findFragmentById(R.id.detailsFragment) as? DetailsFragment
-
             var bundle = Bundle()
-
             bundle.putParcelable(PARCELABLE_VALUE, it)
 
             if(detailsFragment != null){
