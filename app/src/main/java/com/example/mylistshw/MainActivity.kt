@@ -18,7 +18,8 @@ class MainActivity: AppCompatActivity() {
             bundle.putParcelable(PARCELABLE_VALUE, it)
 
             if(detailsFragment != null){
-                // detailsFragment.show()
+                detailsFragment.description = it.biography.fullName
+                detailsFragment.show()
             } else{
                 val detailsFragment = DetailsFragment()
                 supportFragmentManager.beginTransaction()

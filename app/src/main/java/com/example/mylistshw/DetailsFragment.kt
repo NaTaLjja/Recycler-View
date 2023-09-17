@@ -18,6 +18,7 @@ class DetailsFragment:Fragment() {
     var publisher: TextView? = null
     var alignment: TextView? = null
     var aliases: TextView? = null
+    var description = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +50,9 @@ class DetailsFragment:Fragment() {
         aliases?.text = "ALIASES: "
         hero?.biography?.aliases?.forEach { name -> aliases?.append(" $name")}
 
+    }
+    fun show(){
+        fullName?.text = description
     }
 
 }
